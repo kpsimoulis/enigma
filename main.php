@@ -18,7 +18,7 @@ require "lib/Enigma.php";
 use Enigma\Enigma;
 
 /**
- * Determine Challange from the first command line argument
+ * Determine Challenge from the first command line argument
  * Options are: 1, 2 or 3
  */
 $challenge = constant("DEFAULT_CHALLENGE");
@@ -83,7 +83,7 @@ file_put_contents($config['outputFile'], $enigma->decryptSpaces($output));
 echo "Writing result to output file " . $config['outputFile'] . PHP_EOL;
 
 /**
- * Show the time it took for the challange to be resolved
+ * Show the time it took for the challenge to be resolved
  */
 $time = round(microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"], 3);
 echo "Challenge $challenge completed in $time seconds" .PHP_EOL;

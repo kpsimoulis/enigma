@@ -5,7 +5,7 @@ namespace Enigma;
 /**
  * Enigma Solver
  * This is a Helper Class to use the Enigma Engine
- * It also evaluates if the challange can be solved
+ * It also evaluates if the challenge can be solved
  *
  * @package     Enigma
  * @author      Konstantinos Psimoulis <kosta@noima.com>
