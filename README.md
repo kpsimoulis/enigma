@@ -1,6 +1,6 @@
 # Enigma
 
-This is a solution for Concordia University's Engineering Week 2017
+This is a solution for Concordia University's Engineering Week Coding Challenge 2017
 
 This library can decrypt Rotor 1 and Rotor 2 even if all the letters are missing. It can easily be extended to solve missing letters in Rotor 3 or Reflector.
 
