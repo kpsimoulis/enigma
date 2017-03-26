@@ -47,7 +47,8 @@ class Rotor
      * @param string $char
      * @param int $pos
      */
-    public function add($char, $pos) {
+    public function add($char, $pos)
+    {
         $initial_pos = $this->getOriginalPosition($pos);
         if (strpos($this->key, $char) === false) {
             $this->key[$initial_pos] = $char;
@@ -60,7 +61,8 @@ class Rotor
      * @param $pos
      * @return int
      */
-    public function getOriginalPosition($pos) {
+    public function getOriginalPosition($pos)
+    {
         return ($pos + $this->rotation) % 26;
     }
 
@@ -69,7 +71,8 @@ class Rotor
      *
      * @return string
      */
-    public function getCurrentKey() {
+    public function getCurrentKey()
+    {
         $pos = $this->rotation % 26;
         return substr($this->key, $pos) . substr($this->key, 0, $pos);
     }
@@ -77,21 +80,24 @@ class Rotor
     /**
      * Reset the Rotor back to original position
      */
-    public function reset() {
+    public function reset()
+    {
         $this->rotation = 0;
     }
 
     /**
      * Reset the key back to the original key
      */
-    public function resetKey() {
+    public function resetKey()
+    {
         $this->key = $this->original;
     }
 
     /**
      * Perform rotation
      */
-    public function rotate() {
+    public function rotate()
+    {
         $this->rotation++;
     }
 
@@ -100,7 +106,8 @@ class Rotor
      *
      * @return bool
      */
-    public function isIncomplete() {
+    public function isIncomplete()
+    {
         return (strpos($this->key, '?') !== false);
     }
 

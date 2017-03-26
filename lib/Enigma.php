@@ -56,7 +56,7 @@ class Enigma
             $this->engine->decryptRotorByName('R1');
         }
         // Challenge #3, R2 is incomplete
-        else if ($this->engine->r2CanBeDecoded()) {
+        elseif ($this->engine->r2CanBeDecoded()) {
             $this->engine->decryptRotorByName('R2');
         }
         else {

@@ -25,8 +25,7 @@ $challenge = constant("DEFAULT_CHALLENGE");
 if (!empty($argv[1])) {
     if ($argv[1] == 1 || $argv[1] == 2 || $argv[1] == 3) {
         $challenge = $argv[1];
-    }
-    else {
+    } else {
         echo "Usage: php " . basename(__FILE__) . " [challenge]\n";
         echo "[challenge] can be 1, 2 or 3\n";
         exit();
@@ -44,7 +43,7 @@ require("c" . $challenge . "/config.php");
 try {
     $enigma = new Enigma($config);
 } catch (\Exception $e) {
-    echo 'Caught exception: '.  $e->getMessage(). PHP_EOL;
+    echo 'Caught exception: ' . $e->getMessage() . PHP_EOL;
     exit();
 }
 
@@ -56,7 +55,7 @@ $file = file_get_contents($config['inputFile']);
 /**
  * Initialize some variables
  */
-$strlen = strlen( $file ) - 1;
+$strlen = strlen($file) - 1;
 $output = "";
 $pos = 0;
 
@@ -67,8 +66,7 @@ for ($i = 0; $i <= $strlen; $i++) {
     $char = $file[$i];
     if ($char == "\n") {
         $result = $char;
-    }
-    else {
+    } else {
         $result = $enigma->cipher($char);
         $enigma->rotate($pos);
         $pos++;
@@ -86,4 +84,4 @@ echo "Writing result to output file " . $config['outputFile'] . PHP_EOL;
  * Show the time it took for the challenge to be resolved
  */
 $time = round(microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"], 3);
-echo "Challenge $challenge completed in $time seconds" .PHP_EOL;
+echo "Challenge $challenge completed in $time seconds" . PHP_EOL;

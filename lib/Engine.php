@@ -119,7 +119,7 @@ class Engine
             $this->r2->rotate();
             $this->r3->rotate();
         }
-        else if ($counter %2 == 0) {
+        elseif ($counter %2 == 0) {
             $this->r1->rotate();
             $this->r2->rotate();
         }
@@ -176,13 +176,13 @@ class Engine
         if ($rotorPos == 0 || $rotorPos == 6) {
             $rotor = $this->r1;
         }
-        else if ($rotorPos == 1 || $rotorPos == 5) {
+        elseif ($rotorPos == 1 || $rotorPos == 5) {
             $rotor = $this->r2;
         }
-        else if ($rotorPos == 2 || $rotorPos == 4) {
+        elseif ($rotorPos == 2 || $rotorPos == 4) {
             $rotor = $this->r3;
         }
-        else if ($rotorPos == 3) {
+        elseif ($rotorPos == 3) {
             $rotor = $this->reflector;
         }
         else {
@@ -267,7 +267,7 @@ class Engine
                 $result .= $missing;
 
             }
-            else if ($sentence == '?' && $msg != '?') {
+            elseif ($sentence == '?' && $msg != '?') {
                 $missing = $this->cipher($this->msg[$i], $missingPos);
                 $pos = strpos(self::ALPHABET, $this->cipher($this->sentence[$i], $addPos));
                 $rotor->add($missing, $pos);
@@ -417,13 +417,13 @@ class Engine
         if ($rotorName == 'R1') {
             return $this->r1;
         }
-        else if ($rotorName == 'R2') {
+        elseif ($rotorName == 'R2') {
             return $this->r2;
         }
-        else if ($rotorName == 'R3') {
+        elseif ($rotorName == 'R3') {
             return $this->r3;
         }
-        else if ($rotorName == 'REFLECTOR') {
+        elseif ($rotorName == 'REFLECTOR') {
             return $this->reflector;
         }
         else {
